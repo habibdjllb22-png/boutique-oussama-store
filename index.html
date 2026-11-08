@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boutique Oussama — فخامة الأناقة الرجالية</title>
+<meta name="description" content="Boutique Oussama - أحدث الموديلات الرجالية الفاخرة في عين البرد، سيدي بلعباس">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d0d0f;
+  --surface:#15151a;
+  --surface-2:#1c1c23;
+  --line:rgba(201,162,74,.22);
+  --gold:#c9a24a;
+  --gold-2:#e8cd8a;
+  --text:#f4f1ea;
+  --muted:#9c978c;
+  --radius:18px;
+  --shadow:0 24px 60px -20px rgba(0,0,0,.85);
+  --success:#3ddc84;
+  --danger:#ff6b6b;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:'Tajawal',system-ui,sans-serif;
+  line-height:1.7;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--gold);color:#0d0d0f}
+
+/* ===== شريط الإعلان ===== */
+.topbar{
+  background:linear-gradient(90deg,#8f6f1f,#c9a24a,#8f6f1f);
+  color:#141208;text-align:center;
+  font-size:.82rem;font-weight:700;letter-spacing:.4px;
+  padding:9px 14px;
+}
+
+/* ===== الهيدر ===== */
+header{
+  position:sticky;top:0;z-index:60;
+  backdrop-filter:blur(18px);
+  background:rgba(13,13,15,.78);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  max-width:1240px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:20px;padding:14px 22px;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.monogram{
+  width:46px;height:46px;flex:0 0 46px;
+  display:grid;place-items:center;
+  border:1.5px solid var(--gold);border-radius:50%;
+  font-family:'Cormorant Garamond',serif;font-weight:700;
+  font-size:1.15rem;color:var(--gold);letter-spacing:1px;
+  background:radial-gradient(circle at 30% 20%,rgba(201,162,74,.18),transparent 70%);
+}
+.brand-txt strong{
+  display:block;font-family:'Cormorant Garamond',serif;
+  font-size:1.12rem;letter-spacing:3px;font-weight:700;
+}
+.brand-txt span{font-size:.72rem;color:var(--muted);letter-spacing:2px}
+
+.nav-links{display:flex;gap:26px;font-size:.92rem;color:var(--muted)}
+.nav-links a{transition:.25s;position:relative}
+.nav-links a:hover{color:var(--gold-2)}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-6px;right:0;width:0;height:1px;
+  background:var(--gold);transition:.3s;
+}
+.nav-links a:hover::after{width:100%}
+
+.nav-actions{display:flex;align-items:center;gap:12px}
+
+/* Mobile menu */
+.menu-btn{
+  display:none;width:42px;height:42px;border-radius:10px;
+  border:1px solid var(--line);align-items:center;justify-content:center;
+  font-size:1.3rem;
+}
+.mobile-menu{
+  display:none;position:fixed;inset:0;z-index:55;
+  background:rgba(6,6,8,.95);backdrop-filter:blur(12px);
+  flex-direction:column;align-items:center;justify-content:center;gap:28px;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{font-size:1.3rem;color:var(--text);font-weight:500}
+.mobile-menu a:hover{color:var(--gold-2)}
+.close-menu{
+  position:absolute;top:20px;left:20px;
+  width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);font-size:1.2rem;
+}
+
+/* ===== أزرار ===== */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 26px;border-radius:999px;
+  font-weight:700;font-size:.94rem;
+  transition:.28s cubic-bezier(.3,.8,.3,1);
+  white-space:nowrap;
+}
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold-2),var(--gold));
+  color:#141208;box-shadow:0 10px 30px -10px rgba(201,162,74,.65);
+}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 16px 38px -10px rgba(201,162,74,.85)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-2);background:rgba(201,162,74,.07)}
+.btn-sm{padding:9px 18px;font-size:.84rem}
+.btn-danger{border:1px solid rgba(255,107,107,.4);color:var(--danger)}
+.btn-danger:hover{background:rgba(255,107,107,.12)}
+
+/* ===== الهيرو ===== */
+.hero{
+  max-width:1240px;margin:auto;
+  padding:80px 22px 100px;
+  display:grid;grid-template-columns:1.05fr .95fr;
+  gap:64px;align-items:center;
+  position:relative;
+}
+.hero::before{
+  content:'';position:absolute;inset:auto -200px 0 auto;
+  width:560px;height:560px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,74,.13),transparent 68%);
+  filter:blur(30px);pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:.78rem;letter-spacing:2.5px;color:var(--gold);
+  border:1px solid var(--line);border-radius:999px;
+  padding:7px 16px;margin-bottom:26px;
+}
+.eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
+h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.4rem,5.2vw,4rem);
+  line-height:1.08;font-weight:700;letter-spacing:-.5px;
+}
+h1 em{font-style:normal;color:var(--gold-2);display:block}
+.hero p.lead{
+  color:var(--muted);font-size:1.05rem;max-width:48ch;
+  margin:22px 0 34px;
+}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:38px}
+.hero-stats{display:flex;gap:38px;flex-wrap:wrap;padding-top:26px;border-top:1px solid var(--line)}
+.stat b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.7rem;color:var(--gold-2)}
+.stat span{font-size:.8rem;color:var(--muted)}
+
+.hero-visual{position:relative}
+.hero-frame{
+  position:relative;border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);aspect-ratio:4/5;
+}
+.hero-frame img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s ease}
+.hero-frame:hover img{transform:scale(1.06)}
+.hero-frame::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(13,13,15,.75),transparent 55%);
+}
+.hero-frame::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  border:1px solid rgba(201,162,74,.45);border-radius:var(--radius);
+  margin:14px;
+}
+.float-card{
+  position:absolute;bottom:-24px;right:-18px;z-index:5;
+  background:rgba(28,28,35,.92);backdrop-filter:blur(14px);
+  border:1px solid var(--line);border-radius:14px;
+  padding:14px 20px;display:flex;align-items:center;gap:12px;
+  box-shadow:var(--shadow);
+}
+.float-card .dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.18)}
+.float-card b{font-size:.9rem}
+.float-card small{display:block;color:var(--muted);font-size:.74rem}
+
+/* ===== أقسام ===== */
+section{position:relative}
+.wrap{max-width:1240px;margin:auto;padding:0 22px}
+.section-head{text-align:center;margin-bottom:52px}
+.section-head h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700;
+}
+.section-head p{color:var(--muted);margin-top:10px;font-size:.97rem}
+.divider{
+  width:64px;height:2px;margin:18px auto 0;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+
+/* ===== بحث + فلترة ===== */
+.catalog-controls{
+  display:flex;flex-direction:column;gap:18px;margin-bottom:36px;
+}
+.search-box{
+  position:relative;max-width:420px;margin:0 auto;width:100%;
+}
+.search-box input{
+  width:100%;padding:13px 18px 13px 48px;
+  border-radius:999px;background:var(--surface);
+  border:1px solid var(--line);color:var(--text);
+  font-family:inherit;font-size:.95rem;
+}
+.search-box input:focus{outline:none;border-color:var(--gold)}
+.search-box svg{
+  position:absolute;right:18px;top:50%;transform:translateY(-50%);
+  width:18px;height:18px;fill:var(--muted);pointer-events:none;
+}
+.filters{
+  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
+}
+.chip{
+  padding:9px 22px;border-radius:999px;font-size:.88rem;
+  border:1px solid var(--line);color:var(--muted);
+  transition:.25s;
+}
+.chip:hover{color:var(--gold-2);border-color:var(--gold)}
+.chip.active{
+  background:linear-gradient(135deg,var(--gold-2),var(--gold));
+  color:#141208;border-color:transparent;font-weight:700;
+}
+
+/* ===== بطاقات المنتجات ===== */
+.grid{
+  display:grid;gap:26px;
+  grid-template-columns:repeat(auto-fill,minmax(258px,1fr));
+}
+.card{
+  background:var(--surface);border:1px solid rgba(255,255,255,.05);
+  border-radius:var(--radius);overflow:hidden;
+  transition:.35s cubic-bezier(.3,.8,.3,1);
+  display:flex;flex-direction:column;
+  animation:rise .5s ease backwards;
+}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:var(--line);
+  box-shadow:0 26px 50px -24px rgba(0,0,0,.9);
+}
+.card-img{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--surface-2)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease}
+.card:hover .card-img img{transform:scale(1.07)}
+.badge{
+  position:absolute;top:12px;right:12px;z-index:2;
+  background:rgba(13,13,15,.8);backdrop-filter:blur(8px);
+  border:1px solid var(--line);color:var(--gold-2);
+  font-size:.72rem;padding:5px 12px;border-radius:999px;
+}
+.card-body{padding:18px 18px 20px;display:flex;flex-direction:column;flex:1;gap:6px}
+.card-body h3{font-size:1.02rem;font-weight:700}
+.card-body .desc{font-size:.82rem;color:var(--muted);line-height:1.6;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.price-row{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-top:auto;padding-top:14px;gap:10px;
+}
+.price{font-family:'Cormorant Garamond',serif;font-size:1.42rem;color:var(--gold-2);font-weight:700}
+.price small{font-family:'Tajawal';font-size:.72rem;color:var(--muted);font-weight:400}
+
+/* ===== نافذة الطلب ===== */
+.overlay{
+  position:fixed;inset:0;z-index:100;
+  background:rgba(6,6,8,.86);backdrop-filter:blur(8px);
+  display:grid;place-items:center;padding:20px;
+  opacity:0;visibility:hidden;transition:.3s;
+}
+.overlay.open{opacity:1;visibility:visible}
+.modal{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:22px;max-width:860px;width:100%;
+  max-height:92vh;overflow:auto;position:relative;
+  display:grid;grid-template-columns:1fr 1.15fr;
+  transform:translateY(20px) scale(.97);transition:.35s cubic-bezier(.3,.8,.3,1);
+  box-shadow:var(--shadow);
+}
+.overlay.open .modal{transform:none}
+.modal-img{aspect-ratio:1;background:var(--surface-2)}
+.modal-img img{width:100%;height:100%;object-fit:cover}
+.modal-body{padding:34px 30px;display:flex;flex-direction:column;gap:18px}
+.modal-body h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;line-height:1.2}
+.modal-body .desc{color:var(--muted);font-size:.9rem}
+.field label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:9px;letter-spacing:.5px}
+.sizes{display:flex;gap:9px;flex-wrap:wrap}
+.size{
+  min-width:48px;padding:9px 14px;border-radius:10px;text-align:center;
+  border:1px solid var(--line);font-size:.86rem;transition:.2s;
+}
+.size:hover{border-color:var(--gold)}
+.size.active{background:var(--gold);color:#141208;border-color:var(--gold);font-weight:700}
+.qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.qty button{width:42px;height:42px;font-size:1.1rem;color:var(--gold-2);transition:.2s}
+.qty button:hover{background:rgba(201,162,74,.12)}
+.qty span{width:52px;text-align:center;font-weight:700}
+.total-row{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 0;border-top:1px solid var(--line);margin-top:auto;
+}
+.total-row b{font-family:'Cormorant Garamond',serif;font-size:1.6rem;color:var(--gold-2)}
+.close-x{
+  position:absolute;top:14px;left:14px;z-index:5;
+  width:38px;height:38px;border-radius:50%;
+  background:rgba(13,13,15,.75);border:1px solid var(--line);
+  display:grid;place-items:center;font-size:1.1rem;transition:.2s;
+}
+.close-x:hover{background:var(--gold);color:#141208}
+
+/* ===== لوحة التحكم ===== */
+.admin{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:70px 0;margin-top:90px}
+.login-box{max-width:400px;margin:auto;text-align:center}
+.login-box input{
+  width:100%;padding:14px 18px;border-radius:12px;margin:16px 0;
+  background:var(--surface-2);border:1px solid var(--line);
+  color:var(--text);font-family:inherit;font-size:1rem;text-align:center;
+}
+.login-box input:focus{outline:none;border-color:var(--gold)}
+.admin-panel{display:none}
+.admin-panel.show{display:block}
+.admin-header{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-bottom:28px;flex-wrap:wrap;gap:14px;
+}
+.admin-stats{
+  display:flex;gap:16px;flex-wrap:wrap;margin-bottom:28px;
+}
+.stat-card{
+  background:var(--surface-2);border:1px solid var(--line);
+  border-radius:14px;padding:16px 22px;min-width:140px;
+}
+.stat-card b{display:block;font-size:1.4rem;color:var(--gold-2);font-family:'Cormorant Garamond',serif}
+.stat-card span{font-size:.8rem;color:var(--muted)}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+.form-card{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.form-card h3{margin-bottom:20px;font-size:1.05rem;color:var(--gold-2)}
+.f-row{margin-bottom:15px}
+.f-row label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:7px}
+.f-row input,.f-row select,.f-row textarea{
+  width:100%;padding:11px 14px;border-radius:10px;
+  background:var(--bg);border:1px solid rgba(255,255,255,.08);
+  color:var(--text);font-family:inherit;font-size:.92rem;
+}
+.f-row input:focus,.f-row select:focus,.f-row textarea:focus{outline:none;border-color:var(--gold)}
+.f-row textarea{resize:vertical;min-height:74px}
+.img-preview{
+  width:100%;height:160px;border-radius:12px;overflow:hidden;
+  background:var(--bg);border:1px dashed var(--line);
+  display:grid;place-items:center;margin-bottom:12px;
+}
+.img-preview img{width:100%;height:100%;object-fit:cover}
+.img-preview span{color:var(--muted);font-size:.85rem}
+.admin-list{display:flex;flex-direction:column;gap:10px;max-height:520px;overflow:auto;padding-left:4px}
+.admin-item{
+  display:flex;align-items:center;gap:12px;
+  background:var(--surface-2);border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;padding:10px;
+}
+.admin-item img{width:52px;height:52px;border-radius:8px;object-fit:cover;flex:0 0 52px}
+.admin-item .info{flex:1;min-width:0}
+.admin-item .info b{display:block;font-size:.88rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.admin-item .info small{color:var(--muted);font-size:.76rem}
+.icon-btn{
+  width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
+  border:1px solid var(--line);font-size:.85rem;transition:.2s;
+}
+.icon-btn:hover{background:rgba(201,162,74,.15);color:var(--gold-2)}
+.admin-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+
+/* ===== Toast ===== */
+.toast-container{
+  position:fixed;top:24px;left:50%;transform:translateX(-50%);
+  z-index:200;display:flex;flex-direction:column;gap:10px;pointer-events:none;
+}
+.toast{
+  background:var(--surface-2);border:1px solid var(--line);
+  color:var(--text);padding:14px 22px;border-radius:12px;
+  box-shadow:var(--shadow);font-size:.9rem;font-weight:500;
+  animation:toastIn .35s ease;
+  display:flex;align-items:center;gap:10px;
+}
+.toast.success{border-color:rgba(61,220,132,.4)}
+.toast.error{border-color:rgba(255,107,107,.4)}
+@keyframes toastIn{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:none}}
+
+/* ===== التذييل ===== */
+footer{padding:56px 0 34px;text-align:center;border-top:1px solid var(--line);margin-top:0}
+footer .monogram{margin:0 auto 16px}
+footer p{color:var(--muted);font-size:.85rem}
+.foot-links{display:flex;gap:22px;justify-content:center;margin:18px 0 22px;font-size:.86rem;flex-wrap:wrap}
+.foot-links a{color:var(--muted);transition:.2s}
+.foot-links a:hover{color:var(--gold-2)}
+
+/* ===== واتساب عائم ===== */
+.wa-float{
+  position:fixed;bottom:24px;left:24px;z-index:70;
+  width:58px;height:58px;border-radius:50%;
+  background:linear-gradient(135deg,#37d67a,#1faa59);
+  display:grid;place-items:center;
+  box-shadow:0 14px 34px -10px rgba(37,211,102,.7);
+  transition:.3s;
+}
+.wa-float:hover{transform:scale(1.09)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+/* ===== استجابة ===== */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;gap:44px;padding:52px 22px 76px;text-align:center}
+  .hero p.lead{margin-inline:auto}
+  .hero-actions,.hero-stats{justify-content:center}
+  .hero-visual{max-width:430px;margin:auto;width:100%}
+  .nav-links{display:none}
+  .menu-btn{display:flex}
+  .admin-grid{grid-template-columns:1fr}
+  .modal{grid-template-columns:1fr}
+  .modal-img{aspect-ratio:16/10}
+  .float-card{right:auto;left:10px;bottom:-18px}
+}
+@media(max-width:520px){
+  .brand-txt strong{font-size:.95rem;letter-spacing:2px}
+  .brand-txt span{display:none}
+  .nav .btn span{display:none}
+  .nav .btn{padding:11px 16px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+  .card-body{padding:14px}
+  .card-body h3{font-size:.9rem}
+  .price{font-size:1.15rem}
+  .modal-body{padding:24px 20px}
+  .hero-stats{gap:22px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">✨ تخفيضات موسمية متميزة — زورونا في عين البرد ✨</div>
+
+<header>
+  <nav class="nav">
+    <a href="#" class="brand">
+      <div class="monogram">BO</div>
+      <div class="brand-txt">
+        <strong>BOUTIQUE OUSSAMA</strong>
+        <span>فخامة الأناقة الرجالية</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#catalog">الكتالوج</a>
+      <a href="#about">عن المحل</a>
+      <a href="#contact">اتصل بنا</a>
+      <a href="#admin">لوحة التحكم</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-gold btn-sm" id="waHeader" target="_blank" rel="noopener">
+        💬 <span>واتساب</span>
+      </a>
+      <button class="menu-btn" onclick="toggleMobileMenu()" aria-label="القائمة">☰</button>
+    </div>
+  </nav>
+</header>
+
+<!-- قائمة الموبايل -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-menu" onclick="toggleMobileMenu()">✕</button>
+  <a href="#catalog" onclick="toggleMobileMenu()">الكتالوج</a>
+  <a href="#about" onclick="toggleMobileMenu()">عن المحل</a>
+  <a href="#contact" onclick="toggleMobileMenu()">اتصل بنا</a>
+  <a href="#admin" onclick="toggleMobileMenu()">لوحة التحكم</a>
+</div>
+
+<!-- ===== الهيرو ===== -->
+<section class="hero" id="about">
+  <div>
+    <div class="eyebrow">📍 عين البرد — سيدي بلعباس</div>
+    <h1>أناقتك الفاخرة<br><em>تبدأ من هنا</em></h1>
+    <p class="lead">
+      اكتشف أحدث الموديلات الرجالية: البدلات الرسمية، الأطقم الكاجوال،
+      والأحذية الجلدية الفاخرة — بجودة مختارة بعناية وأسعار تناسبك.
+    </p>
+    <div class="hero-actions">
+      <a href="#catalog" class="btn btn-gold">تصفح الكتالوج ←</a>
+      <a href="#contact" class="btn btn-ghost">📍 موقع المحل</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><b>+500</b><span>عميل راضٍ</span></div>
+      <div class="stat"><b>100%</b><span>جودة أصلية</span></div>
+      <div class="stat"><b>24h</b><span>توصيل سريع</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-frame">
+      <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=900" alt="أزياء رجالية فاخرة">
+    </div>
+    <div class="float-card">
+      <div class="dot"></div>
+      <div><b>متجر مفتوح الآن</b><small>يوميًا 9:00 — 20:00</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== الكتالوج ===== -->
+<section id="catalog" style="padding:40px 0 30px">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>الكتالوج الرقمي</h2>
+      <p>اختر المنتجات المفضلة لديك واطلبها مباشرة عبر الواتساب</p>
+      <div class="divider"></div>
+    </div>
+
+    <div class="catalog-controls">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="searchInput" placeholder="ابحث عن منتج..." oninput="handleSearch()">
+      </div>
+      <div class="filters" id="filters"></div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ===== لوحة التحكم ===== -->
+<section class="admin" id="admin">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>⚙️ لوحة تحكم المحل</h2>
+      <p>إدارة المنتجات — البيانات محفوظة في متصفحك</p>
+      <div class="divider"></div>
+    </div>
+
+    <!-- نموذج تسجيل الدخول -->
+    <div class="login-box" id="loginBox">
+      <div class="f-row">
+        <label for="pass">🔒 أدخل كلمة المرور</label>
+        <input type="password" id="pass" placeholder="••••••••" autocomplete="off" onkeydown="if(event.key==='Enter')login()">
+      </div>
+      <button class="btn btn-gold" onclick="login()">دخول</button>
+      <p id="loginMsg" style="color:var(--danger);font-size:.84rem;margin-top:12px;min-height:20px"></p>
+    </div>
+
+    <!-- لوحة التحكم بعد الدخول -->
+    <div class="admin-panel" id="adminPanel">
+      <div class="admin-header">
+        <div>
+          <h3 style="color:var(--gold-2);font-size:1.15rem">مرحبًا بك في لوحة التحكم</h3>
+        </div>
+        <button class="btn btn-ghost btn-sm" onclick="logout()">تسجيل الخروج</button>
+      </div>
+
+      <div class="admin-stats" id="adminStats"></div>
+
+      <div class="admin-grid">
+        <div class="form-card">
+          <h3 id="formTitle">➕ إضافة منتج جديد</h3>
+          
+          <div class="img-preview" id="imgPreview">
+            <span>معاينة الصورة ستظهر هنا</span>
+          </div>
+
+          <div class="f-row"><label>اسم المنتج</label><input id="pName" placeholder="بدلة كلاسيكية سوداء"></div>
+          <div class="f-row"><label>السعر (د.ج)</label><input id="pPrice" type="number" placeholder="18500"></div>
+          <div class="f-row">
+            <label>الفئة</label>
+            <select id="pCat">
+              <option>بدلات</option><option>كاجوال</option>
+              <option>أحذية</option><option>إكسسوارات</option>
+            </select>
+          </div>
+          <div class="f-row"><label>رابط الصورة (URL)</label><input id="pImg" placeholder="https://..." oninput="previewImage()"></div>
+          <div class="f-row"><label>المقاسات (افصل بفاصلة)</label><input id="pSizes" placeholder="S, M, L, XL"></div>
+          <div class="f-row"><label>الوصف</label><textarea id="pDesc" placeholder="وصف قصير للمنتج..."></textarea></div>
+          <div style="display:flex;gap:10px">
+            <button class="btn btn-gold btn-sm" onclick="saveProduct()" style="flex:1">حفظ المنتج</button>
+            <button class="btn btn-ghost btn-sm" onclick="resetForm()">إلغاء</button>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom:16px;font-size:1.05rem;color:var(--gold-2)">📦 المنتجات الحالية</h3>
+          <div class="admin-list" id="adminList"></div>
+          
+          <div class="admin-actions">
+            <button class="btn btn-ghost btn-sm" onclick="exportProducts()">⬇️ تصدير JSON</button>
+            <label class="btn btn-ghost btn-sm" style="cursor:pointer">
+              ⬆️ استيراد JSON
+              <input type="file" accept=".json" onchange="importProducts(event)" style="display:none">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== التذييل ===== -->
+<footer id="contact">
+  <div class="monogram">BO</div>
+  <p style="font-family:'Cormorant Garamond',serif;letter-spacing:3px;font-size:1rem;color:var(--text)">BOUTIQUE OUSSAMA</p>
+  <div class="foot-links">
+    <a href="#catalog">الكتالوج</a>
+    <a id="waFoot" target="_blank" rel="noopener">واتساب</a>
+    <a href="https://maps.google.com/?q=Ain+Berd+Sidi+Bel+Abbes" target="_blank" rel="noopener">📍 عين البرد، سيدي بلعباس</a>
+  </div>
+  <p>© 2026 Boutique Oussama — جميع الحقوق محفوظة</p>
+</footer>
+
+<a class="wa-float" id="waFloat" target="_blank" rel="noopener" aria-label="واتساب">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.2-.7-1.6-.9-2.2-.2-.6-.5-.5-.6-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg>
+</a>
+
+<!-- ===== نافذة الطلب ===== -->
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <button class="close-x" onclick="closeModal()">✕</button>
+    <div class="modal-img"><img id="mImg" src="" alt=""></div>
+    <div class="modal-body">
+      <h3 id="mName"></h3>
+      <p class="desc" id="mDesc"></p>
+      <div class="field">
+        <label>اختر المقاس</label>
+        <div class="sizes" id="mSizes"></div>
+      </div>
+      <div class="field">
+        <label>الكمية</label>
+        <div class="qty">
+          <button onclick="changeQty(-1)">−</button>
+          <span id="mQty">1</span>
+          <button onclick="changeQty(1)">+</button>
+        </div>
+      </div>
+      <div class="total-row">
+        <span style="color:var(--muted);font-size:.9rem">الإجمالي</span>
+        <b id="mTotal"></b>
+      </div>
+      <button class="btn btn-gold" onclick="orderWhatsApp()" style="width:100%">💬 اطلب عبر الواتساب</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<script>
+/* ============================================================
+   ⚙️ الإعدادات — غيّر هنا
+   ============================================================ */
+const WHATSAPP = "213555000000";        // رقم الواتساب بصيغة دولية بدون +
+const ADMIN_PASSWORD = "oussama2026";   // كلمة مرور لوحة التحكم
+
+/* ===== روابط واتساب ===== */
+const waLink = "https://wa.me/" + WHATSAPP + "?text=" +
+  encodeURIComponent("السلام عليكم، أرغب في الاستفسار عن منتجات Boutique Oussama 👋");
+document.getElementById("waHeader").href = waLink;
+document.getElementById("waFoot").href   = waLink;
+document.getElementById("waFloat").href  = waLink;
+
+/* ===== المنتجات الافتراضية ===== */
+const DEFAULT_PRODUCTS = [
+  {id:1, name:"بدلة كلاسيكية سوداء",   price:18500, cat:"بدلات",
+   img:"https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&q=80&w=700",
+   sizes:["48","50","52","54"], desc:"بدلة رسمية بقصّة إيطالية أنيقة، قماش صوف فاخر."},
+  {id:2, name:"بدلة رمادية فاخرة",     price:21000, cat:"بدلات",
+   img:"https://images.unsplash.com/photo-1593032465175-481ac7f401a0?auto=format&fit=crop&q=80&w=700",
+   sizes:["48","50","52"], desc:"بدلة رمادية بلمسة عصرية، مثالية للمناسبات."},
+  {id:3, name:"طقم كاجوال بيج",        price:9800,  cat:"كاجوال",
+   img:"https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&q=80&w=700",
+   sizes:["S","M","L","XL"], desc:"طقم كاجوال مريح بقطن عالي الجودة."},
+  {id:4, name:"قميص أكسفورد أبيض",     price:4500,  cat:"كاجوال",
+   img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&q=80&w=700",
+   sizes:["S","M","L","XL"], desc:"قميص أكسفورد كلاسيكي يناسب كل الإطلالات."},
+  {id:5, name:"حذاء جلدي أسود",        price:12500, cat:"أحذية",
+   img:"https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&q=80&w=700",
+   sizes:["40","41","42","43","44"], desc:"حذاء جلدي طبيعي بتصميم أوكسفورد راقٍ."},
+  {id:6, name:"حذاء كلاسيك بني",       price:11500, cat:"أحذية",
+   img:"https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&q=80&w=700",
+   sizes:["40","41","42","43"], desc:"حذاء بني فاخر بتشطيب يدوي متقن."},
+  {id:7, name:"حزام جلدي فاخر",        price:3200,  cat:"إكسسوارات",
+   img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=700",
+   sizes:["95","100","105","110"], desc:"حزام من الجلد الطبيعي بإبزيم معدني أنيق."},
+  {id:8, name:"ساعة كلاسيكية",          price:8900,  cat:"إكسسوارات",
+   img:"https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&q=80&w=700",
+   sizes:["قياس واحد"], desc:"ساعة أنيقة بحركة كوارتز دقيقة وسوار جلدي."}
+];
+
+/* ===== التخزين ===== */
+let products = load();
+function load(){
+  try{
+    const raw = localStorage.getItem("bo_products");
+    return raw ? JSON.parse(raw) : [...DEFAULT_PRODUCTS];
+  }catch(e){ return [...DEFAULT_PRODUCTS]; }
+}
+function save(){
+  try{ localStorage.setItem("bo_products", JSON.stringify(products)); }catch(e){}
+}
+
+/* ===== Toast ===== */
+function showToast(message, type = "success"){
+  const container = document.getElementById("toastContainer");
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+  toast.textContent = message;
+  container.appendChild(toast);
+  setTimeout(() => {
+    toast.style.opacity = "0";
+    toast.style.transform = "translateY(-10px)";
+    toast.style.transition = ".3s";
+    setTimeout(() => toast.remove(), 300);
+  }, 2800);
+}
+
+/* ===== الفلترة والبحث ===== */
+let activeCat = "الكل";
+let searchQuery = "";
+const CATS = ["الكل","بدلات","كاجوال","أحذية","إكسسوارات"];
+
+function renderFilters(){
+  document.getElementById("filters").innerHTML = CATS.map(c =>
+    `<button class="chip \( {c===activeCat?'active':''}" onclick="setCat(' \){c}')">${c}</button>`
+  ).join("");
+}
+function setCat(c){ activeCat = c; renderFilters(); renderGrid(); }
+function handleSearch(){
+  searchQuery = document.getElementById("searchInput").value.trim().toLowerCase();
+  renderGrid();
+}
+
+function renderGrid(){
+  let list = activeCat === "الكل" ? products : products.filter(p => p.cat === activeCat);
+  
+  if(searchQuery){
+    list = list.filter(p => 
+      p.name.toLowerCase().includes(searchQuery) || 
+      (p.desc || "").toLowerCase().includes(searchQuery) ||
+      p.cat.toLowerCase().includes(searchQuery)
+    );
+  }
+
+  const grid = document.getElementById("grid");
+
+  if(!list.length){
+    grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:var(--muted);padding:50px 0">لا توجد منتجات مطابقة.</p>`;
+    return;
+  }
+
+  grid.innerHTML = list.map((p,i) => `
+    <article class="card" style="animation-delay:${i*60}ms">
+      <div class="card-img">
+        <span class="badge">${p.cat}</span>
+        <img src="\( {p.img}" alt=" \){p.name}" loading="lazy"
+             onerror="this.src='https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=700'">
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <p class="desc">${p.desc || ""}</p>
+        <div class="price-row">
+          <div class="price">${p.price.toLocaleString("fr-FR")} <small>د.ج</small></div>
+          <button class="btn btn-gold btn-sm" onclick="openModal(${p.id})">اطلب</button>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+/* ===== نافذة الطلب ===== */
+let current = null, qty = 1, size = "";
+
+function openModal(id){
+  current = products.find(p => p.id === id);
+  if(!current) return;
+  qty = 1;
+  size = current.sizes?.[0] || "";
+
+  document.getElementById("mImg").src = current.img;
+  document.getElementById("mName").textContent = current.name;
+  document.getElementById("mDesc").textContent = current.desc || "";
+  document.getElementById("mQty").textContent = 1;
+  document.getElementById("mSizes").innerHTML = (current.sizes || ["قياس واحد"]).map(s =>
+    `<button class="size \( {s===size?'active':''}" onclick="pickSize(' \){s}',this)">${s}</button>`
+  ).join("");
+  updateTotal();
+  document.getElementById("overlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function pickSize(s, el){
+  size = s;
+  document.querySelectorAll("#mSizes .size").forEach(b => b.classList.remove("active"));
+  el.classList.add("active");
+}
+function changeQty(d){
+  qty = Math.max(1, Math.min(20, qty + d));
+  document.getElementById("mQty").textContent = qty;
+  updateTotal();
+}
+function updateTotal(){
+  if(!current) return;
+  document.getElementById("mTotal").textContent =
+    (current.price * qty).toLocaleString("fr-FR") + " د.ج";
+}
+function closeModal(){
+  document.getElementById("overlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("overlay").addEventListener("click", e => {
+  if(e.target.id === "overlay") closeModal();
+});
+document.addEventListener("keydown", e => { if(e.key === "Escape") closeModal(); });
+
+function orderWhatsApp(){
+  if(!current) return;
+  const msg =
+`السلام عليكم 👋
+أرغب في طلب المنتج التالي من Boutique Oussama:
+
+🛍️ المنتج: ${current.name}
+📏 المقاس: ${size || "—"}
+🔢 الكمية: ${qty}
+💰 الإجمالي: ${(current.price*qty).toLocaleString("fr-FR")} د.ج
+
+شكرًا لكم 🙏`;
+  window.open("https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg), "_blank");
+}
+
+/* ===== حماية لوحة التحكم ===== */
+function isLoggedIn(){
+  return sessionStorage.getItem("bo_admin_logged") === "1";
+}
+
+function login(){
+  const v = document.getElementById("pass").value.trim();
+  const msg = document.getElementById("loginMsg");
+  
+  if(v === ADMIN_PASSWORD){
+    sessionStorage.setItem("bo_admin_logged", "1");
+    showAdmin();
+    msg.textContent = "";
+    showToast("تم تسجيل الدخول بنجاح");
+  }else{
+    msg.textContent = "❌ كلمة المرور غير صحيحة";
+    showToast("كلمة المرور غير صحيحة", "error");
+  }
+}
+
+function logout(){
+  sessionStorage.removeItem("bo_admin_logged");
+  document.getElementById("loginBox").style.display = "block";
+  document.getElementById("adminPanel").classList.remove("show");
+  document.getElementById("pass").value = "";
+  showToast("تم تسجيل الخروج");
+}
+
+function showAdmin(){
+  document.getElementById("loginBox").style.display = "none";
+  document.getElementById("adminPanel").classList.add("show");
+  renderAdmin();
+  renderStats();
+}
+
+/* ===== لوحة التحكم ===== */
+let editingId = null;
+
+function renderStats(){
+  const counts = {};
+  CATS.slice(1).forEach(c => counts[c] = 0);
+  products.forEach(p => { if(counts[p.cat] !== undefined) counts[p.cat]++; });
+  
+  document.getElementById("adminStats").innerHTML = `
+    <div class="stat-card"><b>${products.length}</b><span>إجمالي المنتجات</span></div>
+    ${Object.entries(counts).map(([cat, n]) => 
+      `<div class="stat-card"><b>\( {n}</b><span> \){cat}</span></div>`
+    ).join("")}
+  `;
+}
+
+function renderAdmin(){
+  document.getElementById("adminList").innerHTML = products.map(p => `
+    <div class="admin-item">
+      <img src="${p.img}" alt="" onerror="this.style.opacity=.3">
+      <div class="info">
+        <b>${p.name}</b>
+        <small>${p.price.toLocaleString("fr-FR")} د.ج • ${p.cat}</small>
+      </div>
+      <button class="icon-btn" onclick="editProduct(${p.id})" title="تعديل">✏️</button>
+      <button class="icon-btn" onclick="deleteProduct(${p.id})" title="حذف">🗑️</button>
+    </div>
+  `).join("");
+}
+
+function previewImage(){
+  const url = document.getElementById("pImg").value.trim();
+  const box = document.getElementById("imgPreview");
+  if(url){
+    box.innerHTML = `<img src="${url}" alt="معاينة" onerror="this.parentElement.innerHTML='<span>تعذر تحميل الصورة</span>'">`;
+  }else{
+    box.innerHTML = `<span>معاينة الصورة ستظهر هنا</span>`;
+  }
+}
+
+function resetForm(){
+  editingId = null;
+  ["pName","pPrice","pImg","pSizes","pDesc"].forEach(id => document.getElementById(id).value = "");
+  document.getElementById("formTitle").textContent = "➕ إضافة منتج جديد";
+  document.getElementById("imgPreview").innerHTML = `<span>معاينة الصورة ستظهر هنا</span>`;
+}
+
+function saveProduct(){
+  const name  = document.getElementById("pName").value.trim();
+  const price = parseFloat(document.getElementById("pPrice").value);
+  const cat   = document.getElementById("pCat").value;
+  const img   = document.getElementById("pImg").value.trim();
+  const sizes = document.getElementById("pSizes").value.split(",").map(s=>s.trim()).filter(Boolean);
+  const desc  = document.getElementById("pDesc").value.trim();
+
+  if(!name || !price || price <= 0){
+    showToast("أدخل اسم المنتج وسعرًا صحيحًا", "error");
+    return;
+  }
+
+  const data = {
+    name, price, cat,
+    img: img || "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=700",
+    sizes: sizes.length ? sizes : ["قياس واحد"],
+    desc
+  };
+
+  if(editingId){
+    const i = products.findIndex(p => p.id === editingId);
+    products[i] = { ...products[i], ...data };
+    showToast("تم تعديل المنتج بنجاح");
+  }else{
+    products.push({ id: Date.now(), ...data });
+    showToast("تم إضافة المنتج بنجاح");
+  }
+
+  save(); 
+  renderGrid(); 
+  renderAdmin(); 
+  renderStats();
+  resetForm();
+}
+
+function editProduct(id){
+  const p = products.find(x => x.id === id);
+  if(!p) return;
+  editingId = id;
+  document.getElementById("pName").value  = p.name;
+  document.getElementById("pPrice").value = p.price;
+  document.getElementById("pCat").value   = p.cat;
+  document.getElementById("pImg").value   = p.img;
+  document.getElementById("pSizes").value = (p.sizes||[]).join(", ");
+  document.getElementById("pDesc").value  = p.desc || "";
+  document.getElementById("formTitle").textContent = "✏️ تعديل المنتج";
+  previewImage();
+  document.getElementById("admin").scrollIntoView({behavior:"smooth"});
+}
+
+function deleteProduct(id){
+  if(!confirm("هل تريد حذف هذا المنتج نهائيًا؟")) return;
+  products = products.filter(p => p.id !== id);
+  save(); 
+  renderGrid(); 
+  renderAdmin();
+  renderStats();
+  showToast("تم حذف المنتج");
+}
+
+/* ===== تصدير / استيراد ===== */
+function exportProducts(){
+  const dataStr = JSON.stringify(products, null, 2);
+  const blob = new Blob([dataStr], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "boutique-oussama-products.json";
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast("تم تصدير المنتجات");
+}
+
+function importProducts(e){
+  const file = e.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev){
+    try{
+      const imported = JSON.parse(ev.target.result);
+      if(!Array.isArray(imported)) throw new Error("صيغة غير صحيحة");
+      products = imported;
+      save();
+      renderGrid();
+      renderAdmin();
+      renderStats();
+      showToast(`تم استيراد ${imported.length} منتج بنجاح`);
+    }catch(err){
+      showToast("فشل الاستيراد — تأكد من الملف", "error");
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+}
+
+/* ===== قائمة الموبايل ===== */
+function toggleMobileMenu(){
+  document.getElementById("mobileMenu").classList.toggle("open");
+}
+
+/* ===== التشغيل ===== */
+renderFilters();
+renderGrid();
+
+// تحقق من تسجيل الدخول عند تحميل الصفحة
+if(isLoggedIn()){
+  showAdmin();
+}
+</script>
+</body>
+</html>
